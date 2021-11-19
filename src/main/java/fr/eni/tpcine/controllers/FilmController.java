@@ -22,4 +22,10 @@ public class FilmController {
 		this.service.get(id);
 		return "pages/detail";
 	}
+	
+	@GetMapping("/listFilms")
+	public String listFilms() {
+		
+		return "pages/list-films";
+	}
 }
