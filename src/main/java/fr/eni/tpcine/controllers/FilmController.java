@@ -19,8 +19,7 @@ public class FilmController {
 	
 	@GetMapping("/film/{id}")
 	public String detail(Integer id) {	
-		this.service.getAll().forEach(film -> System.out.println(film.getTitre()));
-		System.out.println(this.service.getAll());
+		this.service.get(id);
 		return "pages/detail";
 	}
 }

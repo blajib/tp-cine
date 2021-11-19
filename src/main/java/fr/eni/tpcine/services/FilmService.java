@@ -31,13 +31,10 @@ public class FilmService implements FilmServiceInterface {
 
 	@Override
 	public Film get(int id) {
-		var film1 = FilmService.films.stream()
-				  .filter(film -> id  == film.getId())
+		return FilmService.films.stream()
+				  .filter(f-> id  == f.getId())
 				  .findAny()
-				  .orElse(null);
-		return film1;
-		
-		
+				  .orElse(null);	
 	}
 
 }
