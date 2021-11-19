@@ -1,8 +1,12 @@
 package fr.eni.tpcine.bo;
 
+import javax.validation.constraints.NotNull;
+
 public class Genre {
 	
 	private int id;
+	
+	@NotNull
 	private String libelle;
 
 	public Genre() {
@@ -12,7 +16,7 @@ public class Genre {
 
 	public Genre(int id, String libelle) {
 		super();
-		this.id = id;
+		this.setId(id);
 		this.libelle = libelle;
 	}
 
@@ -29,6 +33,18 @@ public class Genre {
 	}
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
+	}
+
+
+
+	public int getId() {
+		return id;
+	}
+
+
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	

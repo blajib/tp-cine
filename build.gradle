@@ -13,6 +13,7 @@ repositories {
 }
 
 dependencies {
+	implementation group: 'org.hibernate', name: 'hibernate-validator', version: '6.2.0.Final'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'

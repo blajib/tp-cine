@@ -2,10 +2,18 @@ package fr.eni.tpcine.bo;
 
 import java.util.ArrayList;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+
 public class Film {
 
 	private int id;
+	
+	@NotNull
+	@NotBlank
 	private String titre;
+	
 	private int annee;
 	private String synopsis;
 	private float duree;

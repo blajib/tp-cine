@@ -11,22 +11,35 @@
             <h2>Ajouter un super nanard</h2>
 
             <form method="post" th:object=${film} th:action="@{/film/ajouter}" >
+            	<div th:if="${#fields.hasErrors('*')}" class="alertalert-danger"><p th:text="#{index.erreurs}">Message d'erreur</p></div>
+                
                 <div class="form-group">
                     <label for="titreInput" class="offset-1 col-2" >Titre</label>
                     <input id="titreInput" type="text"   th:field="*{titre}" autofocus/>
                 </div>
+                <span class="help-block" th:if="${#fields.hasErrors('titre')}"><ul><li th:each="erreur: ${#fields.errors('titre')}" th:text="${erreur}"></li></ul></span>
+
+
                 <div class="form-group" >
                     <label for="anneInput" class="offset-1 col-2">Année</label>
                     <input id="anneInput" type="number"  th:field="*{annee}"/>
                 </div>
+                <span class="help-block" th:if="${#fields.hasErrors('annee')}"><ul><li th:each="erreur: ${#fields.errors('annee')}" th:text="${erreur}"></li></ul></span>
+
+
                 <div class="form-group">
                     <label for="synopsisInput" class="offset-1 col-2">Synopsis</label>
                     <input id="synopsisInput" type="text"  th:field="*{synopsis}"/>
                 </div>
+                <span class="help-block" th:if="${#fields.hasErrors('synopsis')}"><ul><li th:each="erreur: ${#fields.errors('synopsis')}" th:text="${erreur}"></li></ul></span>
+
+
                 <div class="form-group">
                     <label for="dureeInput" class="offset-1 col-2">Durée</label>
                     <input id="dureeInput" type="number"  th:field="*{duree}"/>
                 </div>
+                <span class="help-block" th:if="${#fields.hasErrors('duree')}"><ul><li th:each="erreur: ${#fields.errors('duree')}" th:text="${erreur}"></li></ul></span>
+
                 <div class="form-group">
                     <label for="realisateurInput" class="offset-1 col-2">Réalisateur</label>
                     <select xxclass="form-select mb-2" th:field="*{realisateur}" required>
@@ -34,7 +47,17 @@
                         th:value="${realisateur.id}" th:text="${realisateur.nom}"></option>
                     </select>	
                 </div>
-                
+                <span class="help-block" th:if="${#fields.hasErrors('realisateur')}"><ul><li th:each="erreur: ${#fields.errors('realisateur')}" th:text="${erreur}"></li></ul></span>
+
+                 <div class="form-group">
+                    <label for="genreInput" class="offset-1 col-2">Genre</label>
+                    <select xxclass="form-select mb-2" th:field="*{genre}" required>
+                        <option th:each="genre: ${genres}" 
+                        th:value="${genre.id}" th:text="${genre.libelle}"></option>
+                    </select>	
+                </div>
+                <span class="help-block" th:if="${#fields.hasErrors('genre')}"><ul><li th:each="erreur: ${#fields.errors('genre')}" th:text="${erreur}"></li></ul></span>
+
                 <input class="btn btn-primary col-4 offset-4 mt-4" type="submit" value="Valider" />
 
             </form>
