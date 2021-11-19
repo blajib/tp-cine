@@ -5,13 +5,26 @@
 <body >
 <div class="container body__main mh-80">
       <div th:replace="layout/header :: header">...</div>
-
+	
+	
+	
 	  <div class="row">
 	  	<div class="col-sm"></div>
-	  	<div class="col-lg">
-	  		<span th:text="${film.titre}"></span>
+	  	<article class="col-lg">
 	  	
-	  	</div>
+	  		<h1 th:text="${film.titre}"></h1>
+	  		
+	  		<p th:text="${film.realisateur.nom}"></p>
+	  		
+	  		<p th:text="${film.genre.libelle}"></p>
+	  		
+	  		<p th:text="${film.annee}"></p>
+	  		
+	  		<p th:text="${film.synopsis}"></p>
+	  		
+	  		<p th:text="${film.duree}"></p>
+	  	
+	  	</article>
 	  </div>
 	  
 	

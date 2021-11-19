@@ -24,7 +24,7 @@ public class Film {
 		this.duree = duree;
 		this.listActeurs = listActeurs;
 		this.realisateur = realisateur;
-		this.genre = genre;
+		this.setGenre(genre);
 	}
 	
 	public Film(int id, String titre, int annee, float duree, ArrayList<Personne> listActeurs,
@@ -33,11 +33,11 @@ public class Film {
 		this.setId(id);
 		this.titre = titre;
 		this.annee = annee;
-		this.synopsis = synopsis;
+		this.setSynopsis(synopsis);
 		this.duree = duree;
 		this.listActeurs = listActeurs;
 		this.realisateur = realisateur;
-		this.genre = genre;
+		this.setGenre(genre);
 	}
 
 	public Film(String titre, int annee, float duree, ArrayList<Personne> listActeurs, Personne realisateur,
@@ -47,7 +47,7 @@ public class Film {
 		this.duree = duree;
 		this.listActeurs = listActeurs;
 		this.realisateur = realisateur;
-		this.genre = genre;
+		this.setGenre(genre);
 	}
 
 
@@ -98,6 +98,22 @@ public class Film {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getSynopsis() {
+		return synopsis;
+	}
+
+	public void setSynopsis(String synopsis) {
+		this.synopsis = synopsis;
+	}
+
+	public Genre getGenre() {
+		return genre;
+	}
+
+	public void setGenre(Genre genre) {
+		this.genre = genre;
 	}
 	
 	
