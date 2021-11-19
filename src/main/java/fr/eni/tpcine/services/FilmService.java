@@ -30,9 +30,14 @@ public class FilmService implements FilmServiceInterface {
 
 
 	@Override
-	public Film get() {
-		// TODO Auto-generated method stub
-		return null;
+	public Film get(int id) {
+		var film1 = FilmService.films.stream()
+				  .filter(film -> id  == film.getId())
+				  .findAny()
+				  .orElse(null);
+		return film1;
+		
+		
 	}
 
 }
