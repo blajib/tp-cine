@@ -86,7 +86,7 @@ public class FixtureSansDBB {
 		listFilms.add(new Film(3,"titanic",1997,195,listeActeurs2,realistaeur,genre6,resume.getGerry()));
 		listFilms.add(new Film(4,"the dreamers",2003,116,listeActeurs3,realistaeur,genre3,resume.getDreamers()));
 		listFilms.add(new Film(5,"once upon a time in hollywood",2019,161,listeActeurs5,realistaeur,genre5,resume.getOnce())) ;
-		listFilms.add(new Film(6,"the french dispacth",2021,103,listeActeurs6,realistaeur,genre5,resume.getFrench()));
+		listFilms.add(new Film(6,"the french dispatch",2021,103,listeActeurs6,realistaeur,genre5,resume.getFrench()));
 
 		return listFilms;
 
