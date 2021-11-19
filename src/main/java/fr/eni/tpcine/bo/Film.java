@@ -18,7 +18,7 @@ public class Film {
 
 	public Film(int id, String titre, int annee, float duree, ArrayList<Personne> listActeurs, Personne realisateur,
 			Genre genre) {
-		this.id = id;
+		this.setId(id);
 		this.titre = titre;
 		this.annee = annee;
 		this.duree = duree;
@@ -30,7 +30,7 @@ public class Film {
 	public Film(int id, String titre, int annee, float duree, ArrayList<Personne> listActeurs,
 			Personne realisateur, Genre genre, String synopsis) {
 		super();
-		this.id = id;
+		this.setId(id);
 		this.titre = titre;
 		this.annee = annee;
 		this.synopsis = synopsis;
@@ -90,6 +90,14 @@ public class Film {
 
 	public void setRealisateur(Personne realisateur) {
 		this.realisateur = realisateur;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	

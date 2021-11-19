@@ -5,5 +5,6 @@ import java.util.List;
 import fr.eni.tpcine.bo.Film;
 
 public interface FilmServiceInterface {
-	public List<Film> getFilms();
+	public List<Film> getAll();
+	public Film get(int id);
 }

@@ -24,8 +24,20 @@ public class FilmService implements FilmServiceInterface {
 	
 
 	@Override
-	public List<Film> getFilms() {
+	public List<Film> getAll() {
 		return FilmService.films;
+	}
+
+
+	@Override
+	public Film get(int id) {
+		var film1 = FilmService.films.stream()
+				  .filter(film -> id  == film.getId())
+				  .findAny()
+				  .orElse(null);
+		return film1;
+		
+		
 	}
 
 }

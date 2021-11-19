@@ -36,4 +36,8 @@ out/
 ### VS Code ###
 .vscode/
 
+<<<<<<< HEAD
 #Test
+=======
+#Test
+>>>>>>> 205d3ce2612f9e8a6f129ed6283f9377d6ed9750
