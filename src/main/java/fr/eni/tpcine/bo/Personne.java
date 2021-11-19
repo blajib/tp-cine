@@ -11,7 +11,7 @@ public class Personne {
 	}
 
 	public Personne(int id, String nom, String prenom, String bio) {
-		this.id = id;
+		this.setId(id);
 		this.nom = nom;
 		this.prenom = prenom;
 		this.bio = bio;
@@ -21,7 +21,7 @@ public class Personne {
 
 	public Personne(int id, String nom, String prenom) {
 		super();
-		this.id = id;
+		this.setId(id);
 		this.nom = nom;
 		this.prenom = prenom;
 	}
@@ -59,6 +59,14 @@ public class Personne {
 
 	public void setBio(String bio) {
 		this.bio = bio;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	

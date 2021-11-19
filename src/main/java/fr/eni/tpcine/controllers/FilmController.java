@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import fr.eni.tpcine.bo.Film;
 import fr.eni.tpcine.services.FilmServiceInterface;
 
 @Controller
@@ -33,6 +34,13 @@ public class FilmController {
 		return "pages/detail";
 	}
 	
+	@GetMapping("/film/ajouter")
+	public String add(Model model) {	
+		model.addAttribute("film", new Film());
+		model.addAttribute("personne");
+		return "pages/add";
+	}
+	
 	@GetMapping("/listFilms")
 	public String listFilms(Model model) {
 		
@@ -40,4 +48,6 @@ public class FilmController {
 		
 		return "pages/list-films";
 	}
+	
+	
 }

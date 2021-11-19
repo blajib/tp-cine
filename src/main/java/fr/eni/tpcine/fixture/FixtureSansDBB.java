@@ -1,6 +1,8 @@
 package fr.eni.tpcine.fixture;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +24,34 @@ public class FixtureSansDBB {
 		this.bio = bio;
 		this.resume = resume;
 	}
-
+	
+	//TODO : refactor the genre declaration in general fixture method using this method 
+	public List<Genre> genreFixture(){
+		return Arrays.asList(
+				new Genre(1,"horreur"),
+				new Genre(2,"comédie"),
+				new Genre(3,"biopic"),
+				new Genre(4,"aventure"),
+				new Genre(5,"fantastique"),
+				new Genre(6,"sf"),
+				new Genre(7,"dramatique")
+		);
+	}
+	
+	//TODO : refactor the genre declaration in general fixture method using this method 
+	public List<Personne> personneFixture(){
+		var bio = this.bio;
+		return Arrays.asList(
+				new Personne(1,"Damon","Matt",bio.damon),
+				 new Personne(2,"Dicaprio","Leo",bio.dicaprio),
+				 new Personne(3,"Garell","Louis",bio.garel),
+				 new Personne(4,"Cotillard","Marion",bio.cotillard),
+				 new Personne(5,"Eva","Green",bio.green),
+				 new Personne(6,"Seydoux","Lea",bio.seydoux),
+				 new Personne(7,"Pitt","Brad",bio.pitt),
+				 new Personne(8,"Perry","Luc",bio.perry)
+		);
+	}
 
 	public ArrayList<Film> fixture() {
 		
@@ -89,7 +118,6 @@ public class FixtureSansDBB {
 		listFilms.add(new Film(6,"the french dispatch",2021,103,listeActeurs6,realistaeur,genre5,resume.getFrench()));
 
 		return listFilms;
-
 	}
 
 }
