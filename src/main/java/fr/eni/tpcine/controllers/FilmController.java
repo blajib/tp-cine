@@ -2,6 +2,7 @@ package fr.eni.tpcine.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,7 +20,7 @@ public class FilmController {
 	}
 	
 	@GetMapping("/film/{id}")
-	public String detail(@PathVariable Integer id) {	
+	public String detail(@PathVariable Integer id, Model model) {	
 		
 		if(id == null) return "redirect:/listFilms";
 		
@@ -27,7 +28,7 @@ public class FilmController {
 		
 		if(film == null)  return "redirect:/listFilms";
 		
-		System.out.println(film.getTitre());
+		model.addAttribute("film", film);
 		
 		return "pages/detail";
 	}
