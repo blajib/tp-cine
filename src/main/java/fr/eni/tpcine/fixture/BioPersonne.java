@@ -1,5 +1,8 @@
 package fr.eni.tpcine.fixture;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class BioPersonne {
 	
 	public static String tarantino = "Quentin Tarantino (/kɑ̃tɛ̃ taʁɑ̃tino/1, en anglais : /ˈkwɛntɪn ˌtæɹənˈtiːnoʊ/2), né le 27 mars 1963 à Knoxville dans le Tennessee, est un réalisateur, scénariste, producteur et acteur américain.\r\n"

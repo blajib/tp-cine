@@ -2,17 +2,29 @@ package fr.eni.tpcine.fixture;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import fr.eni.tpcine.bo.Film;
 import fr.eni.tpcine.bo.Genre;
 import fr.eni.tpcine.bo.Personne;
 import fr.eni.tpcine.fixture.SynopsisFilm;
 import fr.eni.tpcine.fixture.BioPersonne;
 
-
+@Service
 public class FixtureSansDBB {
 	
+	private BioPersonne bio;
+	private SynopsisFilm resume;
 	
-	public ArrayList<Film> fixture(BioPersonne bio, SynopsisFilm resume) {
+	@Autowired
+	public FixtureSansDBB(BioPersonne bio, SynopsisFilm resume) {
+		this.bio = bio;
+		this.resume = resume;
+	}
+
+
+	public ArrayList<Film> fixture() {
 		
 		ArrayList<Film> listFilms = new ArrayList<Film>();
 		
@@ -68,7 +80,7 @@ public class FixtureSansDBB {
 		//The French Dispatch
 		ArrayList<Personne> listeActeurs6 = new ArrayList<Personne>();
 		listeActeurs6.add(acteur5);
-
+	
 		listFilms.add(new Film(1,"inception",2010,147,listeActeurs4,realistaeur,genre5,resume.getInception())) ;
 		listFilms.add(new Film(2,"gerry",2002,103,listeActeurs,realistaeur3,genre6,resume.getGerry())) ;
 		listFilms.add(new Film(3,"titanic",1997,195,listeActeurs2,realistaeur,genre6,resume.getGerry()));
@@ -77,9 +89,6 @@ public class FixtureSansDBB {
 		listFilms.add(new Film(6,"the french dispacth",2021,103,listeActeurs6,realistaeur,genre5,resume.getFrench()));
 
 		return listFilms;
-
-
-
 
 	}
 

@@ -1,5 +1,8 @@
 package fr.eni.tpcine.fixture;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class SynopsisFilm {
 	
 	private static String once = "1969, à Hollywood. Le mouvement hippie est à son apogée et manifeste massivement contre la guerre du Viêt Nam, toujours en cours. Richard Nixon est élu nouveau président des États-Unis, succédant à Lyndon B. Johnson, tandis que les émeutes de Stonewall débouchent sur le militantisme homosexuel.\r\n"
