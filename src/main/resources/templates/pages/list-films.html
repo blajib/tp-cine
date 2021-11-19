@@ -6,9 +6,24 @@
 <div class="container body__main mh-80">
       <div th:replace="layout/header :: header">...</div>
       <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1"></div>
+        <div class="col-md-3"><h3>Titre</h3></div>
+        <div class="col-md-3"><h3>Année sortie</h3></div>
+        <div class="col-md-3"><h3>Réalisateur</h3></div>
+        <div class="col-md-3"><h3>Acteurs</h3></div>
+
+
+      </div>
+      <div th:each="film : ${films}" class="row">
+        <div th:utext="${film.titre}" class="col-md-3"></div>
+        <div th:utext="${film.annee}" class="col-md-3"></div>
+        <div th:utext="${film.realisateur.nom}" class="col-md-3"></div>
+        <div class="col-md-3">
+            <div th:each="acteur : ${film.listActeurs}">
+              <p th:utext="${acteur.nom}"></p>
+            </div>
+        </div>
+ 
+
       </div>
 
       <div th:replace="layout/footer :: footer">...</div>
