@@ -17,9 +17,9 @@ public class FilmService implements FilmServiceInterface {
 	
 	private FixtureSansDBB generator;
 	
-	public FilmService(FixtureSansDBB generator, BioPersonne bios, SynopsisFilm synopsis) {
+	public FilmService(FixtureSansDBB generator) {
 		this.generator = generator;
-		FilmService.films = this.generator.fixture(bios, synopsis);
+		FilmService.films = this.generator.fixture();
 	}
 	
 
