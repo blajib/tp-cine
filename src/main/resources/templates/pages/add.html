@@ -6,30 +6,41 @@
 <div class="container body__main mh-80">
       <div th:replace="layout/header :: header">...</div>
 	
-	
-	
-	  <div class="row">
-	  	<aside class="col-sm" id="aside-poster"></aside>
-	  	<article class="col-lg">
-	  	
-	  		<h1 th:text="${film.titre}" id="movie-title" class="text-capitalize"></h1>
-	  		
-	  		<p th:text="${film.realisateur.nom}" class="text-capitalize"></p>
-	  		
-	  		<p th:text="${film.genre.libelle}" class="text-capitalize"></p>
-	  		
-	  		<p th:text="${film.annee}"></p>
-	  		
-	  		<p th:text="${film.synopsis}" class="text-capitalize"></p>
-	  		
-	  		<p th:text="${film.duree}"></p>
-	  	
-	  	</article>
-	  </div>
-	  
-	
-      <div th:replace="layout/footer :: footer">...</div>
+            
+        <div class="container">
+            <h2>Ajouter un super nanard</h2>
+
+            <form method="post" th:object=${film} th:action="@{/film/ajouter}" >
+                <div class="form-group">
+                    <label for="titreInput" class="offset-1 col-2" >Titre</label>
+                    <input id="titreInput" type="text"   th:field="*{titre}" autofocus/>
+                </div>
+                <div class="form-group" >
+                    <label for="anneInput" class="offset-1 col-2">Année</label>
+                    <input id="anneInput" type="number"  th:field="*{annee}"/>
+                </div>
+                <div class="form-group">
+                    <label for="synopsisInput" class="offset-1 col-2">Synopsis</label>
+                    <input id="synopsisInput" type="text"  th:field="*{synopsis}"/>
+                </div>
+                <div class="form-group">
+                    <label for="dureeInput" class="offset-1 col-2">Durée</label>
+                    <input id="dureeInput" type="number"  th:field="*{duree}"/>
+                </div>
+                <div class="form-group">
+                    <label for="realisateurInput" class="offset-1 col-2">Réalisateur</label>
+                    <select xxclass="form-select mb-2" th:field="*{realisateur}" required>
+                        <option th:each="realisateur: ${personnes}" 
+                        th:value="${realisateur.id}" th:text="${realisateur.nom}"></option>
+                    </select>	
+                </div>
+                
+                <input class="btn btn-primary col-4 offset-4 mt-4" type="submit" value="Valider" />
+
+            </form>
+        </div>
+            
+    <div th:replace="layout/footer :: footer">...</div>
 </div>
-<script src="/js/detail.js" type="module"></script>
 </body>
 </html>

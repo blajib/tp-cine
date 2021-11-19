@@ -7,4 +7,5 @@ import fr.eni.tpcine.bo.Film;
 public interface FilmServiceInterface {
 	public List<Film> findAll();
 	public Film find(int id);
+	public void create(Film film);
 }

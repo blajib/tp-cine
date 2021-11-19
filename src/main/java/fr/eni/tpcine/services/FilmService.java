@@ -18,6 +18,7 @@ public class FilmService implements FilmServiceInterface {
 	private FixtureSansDBB generator;
 	
 	public FilmService(FixtureSansDBB generator) {
+		System.out.println("generate");
 		this.generator = generator;
 		FilmService.films = this.generator.fixture();
 	}
@@ -35,6 +36,12 @@ public class FilmService implements FilmServiceInterface {
 				  .filter(f-> id  == f.getId())
 				  .findAny()
 				  .orElse(null);	
+	}
+
+
+	@Override
+	public void create(Film film) {
+		FilmService.films.add(film);
 	}
 
 }
