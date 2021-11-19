@@ -3,9 +3,11 @@ package fr.eni.tpcine.bo;
 import java.util.ArrayList;
 
 public class Film {
-	
+
+	private int id;
 	private String titre;
 	private int annee;
+	private String synopsis;
 	private float duree;
 	private ArrayList<Personne> listActeurs;
 	private Personne realisateur;
@@ -13,6 +15,42 @@ public class Film {
 	
 	public Film() {
 	}
+
+	public Film(int id, String titre, int annee, float duree, ArrayList<Personne> listActeurs, Personne realisateur,
+			Genre genre) {
+		this.id = id;
+		this.titre = titre;
+		this.annee = annee;
+		this.duree = duree;
+		this.listActeurs = listActeurs;
+		this.realisateur = realisateur;
+		this.genre = genre;
+	}
+	
+	public Film(int id, String titre, int annee, float duree, ArrayList<Personne> listActeurs,
+			Personne realisateur, Genre genre, String synopsis) {
+		super();
+		this.id = id;
+		this.titre = titre;
+		this.annee = annee;
+		this.synopsis = synopsis;
+		this.duree = duree;
+		this.listActeurs = listActeurs;
+		this.realisateur = realisateur;
+		this.genre = genre;
+	}
+
+	public Film(String titre, int annee, float duree, ArrayList<Personne> listActeurs, Personne realisateur,
+			Genre genre) {
+		this.titre = titre;
+		this.annee = annee;
+		this.duree = duree;
+		this.listActeurs = listActeurs;
+		this.realisateur = realisateur;
+		this.genre = genre;
+	}
+
+
 
 	public String getTitre() {
 		return titre;
