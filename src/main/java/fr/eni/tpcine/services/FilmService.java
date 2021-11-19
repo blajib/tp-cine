@@ -24,8 +24,15 @@ public class FilmService implements FilmServiceInterface {
 	
 
 	@Override
-	public List<Film> getFilms() {
+	public List<Film> getAll() {
 		return FilmService.films;
+	}
+
+
+	@Override
+	public Film get() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
