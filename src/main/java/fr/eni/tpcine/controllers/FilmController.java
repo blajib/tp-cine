@@ -19,7 +19,15 @@ public class FilmController {
 	
 	@GetMapping("/film/{id}")
 	public String detail(Integer id) {	
-		this.service.get(id);
+		
+		if(id == null) return "redirect:/listFilms";
+		
+		var film = this.service.get(id);
+		
+		if(film == null)  return "redirect:/listFilms";
+		
+		System.out.println(film.getTitre());
+		
 		return "pages/detail";
 	}
 	
