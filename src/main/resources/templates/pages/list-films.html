@@ -14,7 +14,7 @@
 
       </div>
       <div th:each="film : ${films}" class="row">
-        <div th:utext="${film.titre}" class="col-md-3"></div>
+        <a th:utext="${film.titre}" class="col-md-3" th:href="@{/film/{id}(id=${film.id})}"></a>
         <div th:utext="${film.annee}" class="col-md-3"></div>
         <div th:utext="${film.realisateur.nom}" class="col-md-3"></div>
         <div class="col-md-3">
