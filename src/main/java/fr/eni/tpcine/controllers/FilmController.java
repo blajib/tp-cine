@@ -23,4 +23,10 @@ public class FilmController {
 		System.out.println(this.service.getFilms());
 		return "pages/detail";
 	}
+	
+	@GetMapping("/listFilms")
+	public String listFilms() {
+		
+		return "pages/list-films";
+	}
 }
