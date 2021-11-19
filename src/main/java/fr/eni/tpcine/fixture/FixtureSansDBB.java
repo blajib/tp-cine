@@ -2,13 +2,15 @@ package fr.eni.tpcine.fixture;
 
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Component;
+
 import fr.eni.tpcine.bo.Film;
 import fr.eni.tpcine.bo.Genre;
 import fr.eni.tpcine.bo.Personne;
 import fr.eni.tpcine.fixture.SynopsisFilm;
 import fr.eni.tpcine.fixture.BioPersonne;
 
-
+@Component
 public class FixtureSansDBB {
 	
 	
