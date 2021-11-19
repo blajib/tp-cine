@@ -3,6 +3,7 @@ package fr.eni.tpcine.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.eni.tpcine.services.FilmServiceInterface;
@@ -18,11 +19,11 @@ public class FilmController {
 	}
 	
 	@GetMapping("/film/{id}")
-	public String detail(Integer id) {	
+	public String detail(@PathVariable Integer id) {	
 		
 		if(id == null) return "redirect:/listFilms";
 		
-		var film = this.service.get(id);
+		var film = this.service.find(id);
 		
 		if(film == null)  return "redirect:/listFilms";
 		

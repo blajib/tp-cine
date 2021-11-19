@@ -24,13 +24,13 @@ public class FilmService implements FilmServiceInterface {
 	
 
 	@Override
-	public List<Film> getAll() {
+	public List<Film> findAll() {
 		return FilmService.films;
 	}
 
 
 	@Override
-	public Film get(int id) {
+	public Film find(int id) {
 		return FilmService.films.stream()
 				  .filter(f-> id  == f.getId())
 				  .findAny()
