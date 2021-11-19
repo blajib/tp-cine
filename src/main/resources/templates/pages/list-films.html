@@ -1,7 +1,17 @@
 <head th:replace="layout/head :: head">
-  <title id="pageTitle">List-films</title>
+  <title id="pageTitle">Liste des films</title>
 </head>
 
-<body th:replace="layout/body :: body">
-<h1>heeeeeeyeyyyyyy</h1>
+<body >
+<div class="container body__main mh-80">
+      <div th:replace="layout/header :: header">...</div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+      </div>
+
+      <div th:replace="layout/footer :: footer">...</div>
+    </div>
 </body>
+</html>

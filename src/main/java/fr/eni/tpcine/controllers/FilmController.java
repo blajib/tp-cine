@@ -34,7 +34,9 @@ public class FilmController {
 	}
 	
 	@GetMapping("/listFilms")
-	public String listFilms() {
+	public String listFilms(Model model) {
+		
+		model.addAttribute("films");
 		
 		return "pages/list-films";
 	}
