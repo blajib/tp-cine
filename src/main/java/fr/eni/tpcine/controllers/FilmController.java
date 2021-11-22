@@ -71,7 +71,7 @@ public class FilmController {
 	public String add(@Valid @ModelAttribute("film") Film film, BindingResult result) {
 		if(result.hasErrors()) {
 			System.out.println("Errors");
-			return "redirect:/film/ajouter";
+			return "pages/add";
 		}
 		this.filmService.create(film);
 		return "redirect:/";

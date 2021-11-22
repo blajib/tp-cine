@@ -5,16 +5,20 @@ import java.util.ArrayList;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.Range;
+
 
 public class Film {
 
 	private int id;
 	
-	@NotNull
-	@NotBlank
+	@NotBlank(message = "Vous devez renseigner un titre à ce flim.")
+	@Length(min=2,max=25, message="Le titre doit comporter entre 2 et 25 caractères.")
 	private String titre;
-	
+	@Range(min=1895, max=2022, message="L'année de sortie du flim doit se trouver entre 1895 et 2022")
 	private int annee;
+	
 	private String synopsis;
 	private float duree;
 	private ArrayList<Personne> listActeurs;

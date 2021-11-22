@@ -6,7 +6,6 @@ public class Genre {
 	
 	private int id;
 	
-	@NotNull
 	private String libelle;
 
 	public Genre() {
