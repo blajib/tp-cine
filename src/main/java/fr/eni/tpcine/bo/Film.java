@@ -13,21 +13,21 @@ public class Film {
 
 	private int id;
 	
-	@NotBlank(message = "Vous devez renseigner un titre à ce flim.")
-	@Length(min=2,max=25, message="Le titre doit comporter entre 2 et 25 caractères.")
+	@NotBlank(message = "Vous devez renseigner un titre ï¿½ ce flim.")
+	@Length(min=2,max=25, message="Le titre doit comporter entre 2 et 25 caractï¿½res.")
 	private String titre;
 	
-	@Range(min=1895, max=2022, message="L'année de sortie du flim doit se trouver entre 1895 et 2022")
+	@Range(min=1895, max=2022, message="L'annï¿½e de sortie du flim doit se trouver entre 1895 et 2022")
 	private int annee;
 	
-	@Length(min=15,max=400, message="Le synopsis doit comporter entre 15 et 400 caractères.")
+	@Length(min=15,max=400, message="Le synopsis doit comporter entre 15 et 400 caractï¿½res.")
 	private String synopsis;
 	
-	@Range(min=2, max=400, message="La durée du film doit être entre 2 minutes et 400 minutes.")
+	@Range(min=2, max=400, message="La durï¿½e du film doit ï¿½tre entre 2 minutes et 400 minutes.")
 	private float duree;
 	private ArrayList<Personne> listActeurs;
 	
-	@NotNull(message="Le film doit avoir un réalisateur")
+	@NotNull(message="Le film doit avoir un rï¿½alisateur")
 	private Personne realisateur;
 	
 	@NotNull(message="Le film doit avoir un genre")
