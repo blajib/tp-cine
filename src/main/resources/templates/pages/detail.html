@@ -26,7 +26,15 @@
 	  	
 	  	</article>
 	  </div>
-	  
+	  <div class="row">
+		  <div class="col-md-11"></div>
+		  <div class="col-md-1">
+			  <form th:action="@{/film/remove}" method="post">
+				  <input type="hidden" name="id" th:value="${film.id}">
+				  <input type="submit" value="Remove">
+			  </form>
+		  </div>
+	  </div>
 	
       <div th:replace="layout/footer :: footer">...</div>
 </div>

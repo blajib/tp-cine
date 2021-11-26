@@ -6,20 +6,12 @@ import org.springframework.stereotype.Service;
 
 import fr.eni.tpcine.bo.Film;
 import fr.eni.tpcine.bo.Genre;
-import fr.eni.tpcine.fixture.FixtureSansDBB;
 
 @Service
 public class GenreService implements GenreServiceInterface {
 	
 	private static List<Genre> genres;
-	
-	private FixtureSansDBB generator;
-	
-	public GenreService(FixtureSansDBB generator) {
-		System.out.println("generate");
-		this.generator = generator;
-		GenreService.genres = this.generator.genreFixture();
-	}
+
 	
 
 	@Override
@@ -29,7 +21,7 @@ public class GenreService implements GenreServiceInterface {
 
 
 	@Override
-	public Genre find(int id) {
+	public Genre find(long  id) {
 		return GenreService.genres.stream()
 				  .filter(g-> id  == g.getId())
 				  .findAny()
@@ -41,5 +33,22 @@ public class GenreService implements GenreServiceInterface {
 	public void create(Genre genre){
 		System.err.println("NOT IMPLEMENTED");
 	}
+
+
+	@Override
+	public void remove(long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public Genre update(Genre genre) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	
 
 }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.eni.tpcine.bo.Film;
+import fr.eni.tpcine.bo.Genre;
 import fr.eni.tpcine.services.FilmServiceInterface;
 import fr.eni.tpcine.services.GenreServiceInterface;
 import fr.eni.tpcine.services.PersonneServiceInterface;
@@ -37,9 +38,9 @@ public class FilmController {
 	}
 	
 	@GetMapping("/film/{id}")
-	public String detail(@PathVariable Integer id, Model model) {	
+	public String detail(@PathVariable long id, Model model) {	
 		
-		if(id == null) return "redirect:/listFilms";
+		if(id == 0) return "redirect:/listFilms";
 		
 		var film = this.filmService.find(id);
 		
@@ -62,19 +63,23 @@ public class FilmController {
 		}
 			
 		model.addAttribute("film", film);
-		model.addAttribute("personnes", this.personneService.findAll());
+		model.addAttribute("realisateurs", this.personneService.findAllDirectors());
+		//List<Genre> genres = genreService.findAll();
 		model.addAttribute("genres", this.genreService.findAll());
 		return "pages/add";
 	}
 	
 	@PostMapping("/film/ajouter")
-	public String add(@Valid @ModelAttribute("film") Film film, BindingResult result) {
+	public String add(@Valid @ModelAttribute("film") Film film, BindingResult result,Model model) {
+		
 		if(result.hasErrors()) {
 			System.out.println("Errors");
 			return "pages/add";
 		}
+		
 		this.filmService.create(film);
-		return "redirect:/";
+		model.addAttribute("films",filmService.findAll());
+		return "redirect:/listFilms";
 	}
 	
 	@GetMapping("/listFilms")
@@ -84,6 +89,13 @@ public class FilmController {
 		
 		return "pages/list-films";
 	}
+	
+	@PostMapping("/film/remove")
+	public String remove(long id) {	
+		filmService.remove(id);	
+		return "redirect:/listFilms";
+	}
+	
 	
 	
 }

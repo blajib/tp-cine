@@ -6,19 +6,12 @@ import org.springframework.stereotype.Service;
 
 import fr.eni.tpcine.bo.Film;
 import fr.eni.tpcine.bo.Personne;
-import fr.eni.tpcine.fixture.FixtureSansDBB;
 
 @Service
 public class PersonneService implements PersonneServiceInterface {
 	
 	private static List<Personne> personnes;
-	
-	private FixtureSansDBB generator;
-	
-	public PersonneService(FixtureSansDBB generator) {
-		this.generator = generator;
-		PersonneService.personnes = this.generator.personneFixture();
-	}
+
 	
 	@Override
 	public List<Personne> findAll() {
@@ -26,11 +19,36 @@ public class PersonneService implements PersonneServiceInterface {
 	}
 
 	@Override
-	public Personne find(int id) {
+	public Personne find(long id) {
 		return PersonneService.personnes.stream()
 				  .filter(f-> id  == f.getId())
 				  .findAny()
 				  .orElse(null);	
+	}
+
+
+	@Override
+	public Personne update(Personne personne) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void create(Personne personne) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void remove(long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Personne> findAllDirectors() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 

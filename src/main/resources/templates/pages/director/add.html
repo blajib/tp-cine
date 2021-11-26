@@ -1,0 +1,27 @@
+<head th:replace="layout/head :: head">
+  <title id="pageTitle">Ajouter-réalisateur</title>
+</head>
+<body >
+
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <form action="/director/ajouter" th:object="${realisateur}" th:method="post">
+        
+        <label for="nom">Nom</label>
+        <input id="nom" th:field="*{nom}">
+
+        <label for="prenom">Prenom</label>
+        <input id="prenom" th:field="*{prenom}">
+
+        <input th:type="hidden" th:field="*{id}">
+
+        <input type="submit" value="Enregistrer">
+
+      </form>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+INSERT INTO `personne`( `bio`, `nom`, `prenom`,`job`) VALUES ('hehehe','pitt','brad',1)
+INSERT INTO `personne`( `bio`, `nom`, `prenom`,`job`) VALUES ('jejejeje','garel','louis',1)
+INSERT INTO `personne`( `bio`, `nom`, `prenom`,`job`) VALUES ('lflflfl','tom','cruise',1)
+INSERT INTO `personne`( `bio`, `nom`, `prenom`,`job`) VALUES ('mfmfmf','geer','richard',1)
+INSERT INTO `personne`( `bio`, `nom`, `prenom`,`job`) VALUES ('lflflf','ford','harisson',1)
+INSERT INTO `personne`( `bio`, `nom`, `prenom`,`job`) VALUES ('lflflf','ford','harisson',1)
+INSERT INTO `personne`( `bio`, `nom`, `prenom`,`job`) VALUES ('lflflf','ford','harisson',1)
+
+INSERT INTO `personne`( `bio`, `nom`, `prenom`,`job`) VALUES ('lflflf','tarantino','quentin',2)
+INSERT INTO `personne`( `bio`, `nom`, `prenom`,`job`) VALUES ('lflflf','quentin','dupieux',2)
+INSERT INTO `personne`( `bio`, `nom`, `prenom`,`job`) VALUES ('lflflf','george','miller',2)
+INSERT INTO `personne`( `bio`, `nom`, `prenom`,`job`) VALUES ('lflflf','remy','sam',2)
+
+
+INSERT INTO `genre`( `libelle`) VALUES ('horreur')
+INSERT INTO `genre`( `libelle`) VALUES ('drame')
+INSERT INTO `genre`( `libelle`) VALUES ('action')
+INSERT INTO `genre`( `libelle`) VALUES ('drame')
+INSERT INTO `genre`( `libelle`) VALUES ('comedie')
+INSERT INTO `genre`( `libelle`) VALUES ('porno')

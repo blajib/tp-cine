@@ -1,0 +1,33 @@
+<head th:replace="layout/head :: head">
+    <title id="pageTitle">Ajouter-réalisateur</title>
+  </head>
+  <body >
+  
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <form action="/utilisateur/create" th:object="${utilisateur}" method="post">
+          
+          <label for="nom">Nom</label>
+          <input id="nom" th:field="*{nom}">
+  
+          <label for="prenom">Prenom</label>
+          <input id="prenom" th:field="*{prenom}">
+
+          <label for="email">Email</label>
+          <input id="email" th:field="*{email}">
+
+          <label for="password">Password</label>
+          <input id="password" th:field="*{password}">
+  
+          <!-- <input th:type="hidden" th:field="*{id}"> -->
+  
+          <input type="submit" value="Enregistrer">
+  
+        </form>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  
+  </body>
+  </html>

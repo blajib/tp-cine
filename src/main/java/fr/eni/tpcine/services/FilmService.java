@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import fr.eni.tpcine.bo.Film;
 import fr.eni.tpcine.fixture.BioPersonne;
-import fr.eni.tpcine.fixture.FixtureSansDBB;
 import fr.eni.tpcine.fixture.SynopsisFilm;
 
 @Service
@@ -15,13 +14,6 @@ public class FilmService implements FilmServiceInterface {
 	
 	private static List<Film> films;
 	
-	private FixtureSansDBB generator;
-	
-	public FilmService(FixtureSansDBB generator) {
-		System.out.println("generate");
-		this.generator = generator;
-		FilmService.films = this.generator.fixture();
-	}
 	
 
 	@Override
@@ -31,7 +23,7 @@ public class FilmService implements FilmServiceInterface {
 
 
 	@Override
-	public Film find(int id) {
+	public Film find(long  id) {
 		return FilmService.films.stream()
 				  .filter(f-> id  == f.getId())
 				  .findAny()
@@ -42,6 +34,21 @@ public class FilmService implements FilmServiceInterface {
 	@Override
 	public void create(Film film) {
 		FilmService.films.add(film);
+	}
+
+
+
+	@Override
+	public void remove(long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public Film update(Film film) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
